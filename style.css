@@ -1,0 +1,91 @@
+.box {
+    background-color: #050210;
+    width: 660px;
+    height: 540px;
+    margin: auto;
+}
+
+.circle { 
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 50%; 
+    width: 320px; 
+    height: 320px; 
+    position: absolute;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    filter: opacity(90%);
+    top: 12%;
+    left: 42%;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);    
+    }
+}
+
+.circle::after {
+    background-image: linear-gradient(#fb5dad , #55fb9f , #b97aff); 
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    filter: blur(50px); 
+}
+
+.circle1::after {
+    background:repeating-radial-gradient(circle,#17052b, hsl(267, 57%, 9%) );
+    border-radius: 50%;
+    width: 275px;
+    height: 275px;
+    position: absolute;
+    animation-name: circle1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 14.3%;
+    right: 42.5%;
+}
+
+.circle1::before,
+.circle1::after {
+    content: "";
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #11061d;
+    top: 14.3%;
+    right: 42.5%;
+    filter: blur(1px);
+}
+
+.circle1::before {
+    animation-delay: 0s;
+}
+
+.circle1::after {
+    animation-delay: 1s;
+}
+
+@keyframes circle1 {
+    0% {
+        transform: scale(0);  
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5; 
+}
+
+}
+
+
